@@ -1,0 +1,183 @@
+[
+  {
+    "v": 11,
+    "name": "httpbin.org API",
+    "folders": [],
+    "requests": [
+      {
+        "v": "17",
+        "name": "GET /get",
+        "method": "GET",
+        "endpoint": "https://httpbin.org/get",
+        "params": [],
+        "headers": [],
+        "preRequestScript": "",
+        "testScript": "",
+        "auth": {
+          "authType": "inherit",
+          "authActive": true
+        },
+        "body": {
+          "contentType": null,
+          "body": null
+        },
+        "requestVariables": [],
+        "responses": {},
+        "description": null
+      },
+      {
+        "v": "17",
+        "name": "POST /post (Raw JSON)",
+        "method": "POST",
+        "endpoint": "https://httpbin.org/post",
+        "params": [],
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "active": true,
+            "description": ""
+          }
+        ],
+        "preRequestScript": "",
+        "testScript": "",
+        "auth": {
+          "authType": "inherit",
+          "authActive": true
+        },
+        "body": {
+          "contentType": "application/json",
+          "body": "{\n  \"key\": \"value\"\n}"
+        },
+        "requestVariables": [],
+        "responses": {},
+        "description": null
+      },
+      {
+        "v": "17",
+        "name": "POST /post (form-data)",
+        "method": "POST",
+        "endpoint": "https://httpbin.org/post",
+        "params": [],
+        "headers": [],
+        "preRequestScript": "",
+        "testScript": "",
+        "auth": {
+          "authType": "inherit",
+          "authActive": true
+        },
+        "body": {
+          "contentType": "multipart/form-data",
+          "body": [
+            {
+              "key": "username",
+              "active": true,
+              "isFile": false,
+              "value": "test_user"
+            },
+            {
+              "key": "password",
+              "active": true,
+              "isFile": false,
+              "value": "test_pass"
+            }
+          ]
+        },
+        "requestVariables": [],
+        "responses": {},
+        "description": null
+      },
+      {
+        "v": "17",
+        "name": "PUT /put",
+        "method": "PUT",
+        "endpoint": "https://httpbin.org/put",
+        "params": [],
+        "headers": [],
+        "preRequestScript": "",
+        "testScript": "",
+        "auth": {
+          "authType": "inherit",
+          "authActive": true
+        },
+        "body": {
+          "contentType": "text/plain",
+          "body": "{\n  \"update\": \"true\"\n}"
+        },
+        "requestVariables": [],
+        "responses": {},
+        "description": null
+      },
+      {
+        "v": "17",
+        "name": "DELETE /delete",
+        "method": "DELETE",
+        "endpoint": "https://httpbin.org/delete",
+        "params": [],
+        "headers": [],
+        "preRequestScript": "",
+        "testScript": "",
+        "auth": {
+          "authType": "inherit",
+          "authActive": true
+        },
+        "body": {
+          "contentType": null,
+          "body": null
+        },
+        "requestVariables": [],
+        "responses": {},
+        "description": null
+      },
+      {
+        "v": "17",
+        "name": "GET /status/200",
+        "method": "GET",
+        "endpoint": "https://httpbin.org/status/200",
+        "params": [],
+        "headers": [],
+        "preRequestScript": "",
+        "testScript": "",
+        "auth": {
+          "authType": "inherit",
+          "authActive": true
+        },
+        "body": {
+          "contentType": null,
+          "body": null
+        },
+        "requestVariables": [],
+        "responses": {},
+        "description": null
+      },
+      {
+        "v": "17",
+        "name": "GET /delay/3",
+        "method": "GET",
+        "endpoint": "https://httpbin.org/delay/3",
+        "params": [],
+        "headers": [],
+        "preRequestScript": "",
+        "testScript": "",
+        "auth": {
+          "authType": "inherit",
+          "authActive": true
+        },
+        "body": {
+          "contentType": null,
+          "body": null
+        },
+        "requestVariables": [],
+        "responses": {},
+        "description": null
+      }
+    ],
+    "auth": {
+      "authType": "inherit",
+      "authActive": true
+    },
+    "headers": [],
+    "variables": [],
+    "description": "A sample Postman collection for testing httpbin.org endpoints."
+  }
+]
