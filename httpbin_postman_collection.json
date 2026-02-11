@@ -1,0 +1,166 @@
+{
+  "info": {
+    "name": "httpbin.org API",
+    "description": "A sample Postman collection for testing httpbin.org endpoints.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_postman_id": "httpbin-20250728085139"
+  },
+  "item": [
+    {
+      "name": "GET /get",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://httpbin.org/get",
+          "protocol": "https",
+          "host": [
+            "httpbin",
+            "org"
+          ],
+          "path": [
+            "get"
+          ]
+        }
+      }
+    },
+    {
+      "name": "POST /post (Raw JSON)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"key\": \"value\"\n}"
+        },
+        "url": {
+          "raw": "https://httpbin.org/post",
+          "protocol": "https",
+          "host": [
+            "httpbin",
+            "org"
+          ],
+          "path": [
+            "post"
+          ]
+        }
+      }
+    },
+    {
+      "name": "POST /post (form-data)",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "username",
+              "value": "test_user",
+              "type": "text"
+            },
+            {
+              "key": "password",
+              "value": "test_pass",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://httpbin.org/post",
+          "protocol": "https",
+          "host": [
+            "httpbin",
+            "org"
+          ],
+          "path": [
+            "post"
+          ]
+        }
+      }
+    },
+    {
+      "name": "PUT /put",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"update\": \"true\"\n}"
+        },
+        "url": {
+          "raw": "https://httpbin.org/put",
+          "protocol": "https",
+          "host": [
+            "httpbin",
+            "org"
+          ],
+          "path": [
+            "put"
+          ]
+        }
+      }
+    },
+    {
+      "name": "DELETE /delete",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "https://httpbin.org/delete",
+          "protocol": "https",
+          "host": [
+            "httpbin",
+            "org"
+          ],
+          "path": [
+            "delete"
+          ]
+        }
+      }
+    },
+    {
+      "name": "GET /status/200",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://httpbin.org/status/200",
+          "protocol": "https",
+          "host": [
+            "httpbin",
+            "org"
+          ],
+          "path": [
+            "status",
+            "200"
+          ]
+        }
+      }
+    },
+    {
+      "name": "GET /delay/3",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://httpbin.org/delay/3",
+          "protocol": "https",
+          "host": [
+            "httpbin",
+            "org"
+          ],
+          "path": [
+            "delay",
+            "3"
+          ]
+        }
+      }
+    }
+  ]
+}
