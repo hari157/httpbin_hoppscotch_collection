@@ -1,0 +1,13 @@
+{
+  "id": "6c8rptlywo3",
+  "v": 2,
+  "name": "Restful_Booker_Environment",
+  "variables": [
+    {
+      "key": "baseURL",
+      "secret": false,
+      "initialValue": "https://restful-booker.herokuapp.com",
+      "currentValue": "https://restful-booker.herokuapp.com"
+    }
+  ]
+}
