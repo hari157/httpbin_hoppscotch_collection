@@ -1,0 +1,169 @@
+{
+  "v": 11,
+  "name": "StudentDetails",
+  "folders": [],
+  "requests": [
+    {
+      "v": "17",
+      "name": "GET Students",
+      "method": "GET",
+      "endpoint": "<<base_url>>/api/studentsDetails",
+      "params": [],
+      "headers": [],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "body": {
+        "contentType": null,
+        "body": null
+      },
+      "requestVariables": [],
+      "responses": {},
+      "description": null,
+      "_ref_id": "req_mlt54qmn_cf9fe887-7aa3-44da-960a-36679222edb6"
+    },
+    {
+      "v": "17",
+      "name": "CREATE Student",
+      "method": "POST",
+      "endpoint": "<<base_url>>/api/studentsDetails",
+      "params": [],
+      "headers": [],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "body": {
+        "contentType": "application/json",
+        "body": "{\r\n  \"first_name\": \"Redwan\",\r\n  \"middle_name\": \"Adrian\",\r\n  \"last_name\": \"Anik\",\r\n  \"date_of_birth\": \"Feb 5 1996\"\r\n}\r\n\r\n"
+      },
+      "requestVariables": [],
+      "responses": {},
+      "description": null,
+      "_ref_id": "req_mlt54qmn_64444c9f-faee-4cd1-9a8d-5a0c5ebad5c3"
+    },
+    {
+      "v": "17",
+      "name": "GET Specific Student",
+      "method": "GET",
+      "endpoint": "<<base_url>>/api/studentsDetails/<<sid>>",
+      "params": [],
+      "headers": [],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "body": {
+        "contentType": "application/json",
+        "body": ""
+      },
+      "requestVariables": [],
+      "responses": {},
+      "description": null,
+      "_ref_id": "req_mlt54qmn_3d0c18b8-c48b-42de-bd20-b8c095ac35b7"
+    },
+    {
+      "v": "17",
+      "name": "UPDATE Student",
+      "method": "PUT",
+      "endpoint": "<<base_url>>/api/studentsDetails/<<sid>>",
+      "params": [],
+      "headers": [],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "body": {
+        "contentType": "application/json",
+        "body": "{\r\n\"id\":<<sid>>,\r\n\"first_name\": \"Minhaj\",\r\n\"middle_name\": \"Ahmed\",\r\n\"last_name\": \"Akib\",\r\n\"date_of_birth\": \"20 Feb 1997\"\r\n}\r\n"
+      },
+      "requestVariables": [],
+      "responses": {},
+      "description": null,
+      "_ref_id": "req_mlt54qmn_85328db9-f002-4ad4-82aa-85b107ff8808"
+    },
+    {
+      "v": "17",
+      "name": "Create Student Address",
+      "method": "POST",
+      "endpoint": "<<base_url>>/api/addresses",
+      "params": [],
+      "headers": [],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "body": {
+        "contentType": "application/json",
+        "body": "{\r\n    \"Permanent_Address\": {\r\n        \"House_Number\": \"1209\",\r\n        \"City\": \"Dhaka\",\r\n        \"State\": \"None\",\r\n        \"Country\": \"Bangladesh\",\r\n        \"PhoneNumber\": [\r\n            {\r\n                \"Std_Code\": \"sample string 1\",\r\n                \"Home\": \"sample string 2\",\r\n                \"Mobile\": \"01789450000\"\r\n            },\r\n            {\r\n                \"Std_Code\": \"sample string 1\",\r\n                \"Home\": \"sample string 2\",\r\n                \"Mobile\": \"0178956666\"\r\n            }\r\n        ]\r\n    },\r\n    \"stId\": <<sid>>\r\n}"
+      },
+      "requestVariables": [],
+      "responses": {},
+      "description": null,
+      "_ref_id": "req_mlt54qmn_c3d2a1a0-4f3e-466d-bd0e-81945a790f14"
+    },
+    {
+      "v": "17",
+      "name": "Final Student Details",
+      "method": "GET",
+      "endpoint": "<<base_url>>/api/FinalStudentDetails/<<sid>>",
+      "params": [],
+      "headers": [],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "body": {
+        "contentType": null,
+        "body": null
+      },
+      "requestVariables": [],
+      "responses": {},
+      "description": null,
+      "_ref_id": "req_mlt54qmn_b207982f-2494-42bb-9afe-7dac725495f3"
+    },
+    {
+      "v": "17",
+      "name": "Delete Student",
+      "method": "DELETE",
+      "endpoint": "<<base_url>>/api/studentsDetails/<<sid>>",
+      "params": [],
+      "headers": [],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "body": {
+        "contentType": null,
+        "body": null
+      },
+      "requestVariables": [],
+      "responses": {},
+      "description": null,
+      "_ref_id": "req_mlt54qmn_d6c9a902-c7be-4987-8dd0-b9455cafd439"
+    }
+  ],
+  "auth": {
+    "authType": "inherit",
+    "authActive": true
+  },
+  "headers": [],
+  "variables": [],
+  "description": null,
+  "_ref_id": "coll_mlt54qmn_dac3926d-4a6c-4641-bc09-cfae5e8294db"
+}

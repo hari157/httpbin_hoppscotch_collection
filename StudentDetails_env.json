@@ -1,0 +1,25 @@
+{
+  "id": "ro4xihkqup",
+  "v": 2,
+  "name": "StudentDetails",
+  "variables": [
+    {
+      "key": "base_url",
+      "secret": false,
+      "initialValue": "https://thetestingworldapi.com",
+      "currentValue": "https://thetestingworldapi.com"
+    },
+    {
+      "key": "id",
+      "secret": false,
+      "initialValue": "",
+      "currentValue": ""
+    },
+    {
+      "key": "sid",
+      "secret": false,
+      "initialValue": "",
+      "currentValue": ""
+    }
+  ]
+}
