@@ -1,0 +1,60 @@
+{
+  "name": "reqres_env",
+  "variables": [
+    {
+      "key": "baseUrl",
+      "value": "https://reqres.in",
+      "secret": false
+    },
+    {
+      "key": "apiKey",
+      "value": "reqres_dc43307f436e45278f2465462b8b082c",
+      "secret": false
+    },
+    {
+      "key": "usersPage",
+      "value": "2",
+      "secret": false
+    },
+    {
+      "key": "productsPage",
+      "value": "1",
+      "secret": false
+    },
+    {
+      "key": "userId",
+      "value": "2",
+      "secret": false
+    },
+    {
+      "key": "resourceId",
+      "value": "1",
+      "secret": false
+    },
+    {
+      "key": "authToken",
+      "value": "",
+      "secret": false
+    },
+    {
+      "key": "loginEmail",
+      "value": "eve.holt@reqres.in",
+      "secret": false
+    },
+    {
+      "key": "loginPassword",
+      "value": "cityslicka",
+      "secret": false
+    },
+    {
+      "key": "registerEmail",
+      "value": "eve.holt@reqres.in",
+      "secret": false
+    },
+    {
+      "key": "registerPassword",
+      "value": "pistol",
+      "secret": false
+    }
+  ]
+}

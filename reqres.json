@@ -1,0 +1,283 @@
+{
+  "v": 11,
+  "name": "reqres",
+  "folders": [
+    {
+      "v": 1,
+      "name": "Auth",
+      "folders": [],
+      "requests": [
+        {
+          "v": "17",
+          "name": "Register User",
+          "endpoint": "<<baseUrl>>/api/register",
+          "method": "POST",
+          "params": [],
+          "headers": [
+            {
+              "key": "x-api-key",
+              "value": "<<apiKey>>",
+              "active": true,
+              "description": ""
+            }
+          ],
+          "preRequestScript": "console.log('Registering: <<registerEmail>>');",
+          "testScript": "pw.test('Status is 200', () => {\n  pw.expect(pw.response.status).toBe(200);\n});\npw.test('Token is a string', () => {\n  pw.expect(pw.response.body.token).toBeType('string');\n});\nif (pw.response.body && pw.response.body.token) {\n  pw.env.set('authToken', pw.response.body.token);\n}",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "body": "{\n  \"email\": \"<<registerEmail>>\",\n  \"password\": \"<<registerPassword>>\"\n}",
+            "contentType": "application/json"
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "17",
+          "name": "Login",
+          "endpoint": "<<baseUrl>>/api/login",
+          "method": "POST",
+          "params": [],
+          "headers": [
+            {
+              "key": "x-api-key",
+              "value": "<<apiKey>>",
+              "active": true,
+              "description": ""
+            }
+          ],
+          "preRequestScript": "console.log('Logging in as: <<loginEmail>>');",
+          "testScript": "pw.test('Status is 200', () => {\n  pw.expect(pw.response.status).toBe(200);\n});\npw.test('Token is a string', () => {\n  pw.expect(pw.response.body.token).toBeType('string');\n});\nif (pw.response.body && pw.response.body.token) {\n  pw.env.set('authToken', pw.response.body.token);\n  console.log('Token saved: ' + pw.response.body.token);\n}",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "body": "{\n  \"email\": \"<<loginEmail>>\",\n  \"password\": \"<<loginPassword>>\"\n}",
+            "contentType": "application/json"
+          },
+          "requestVariables": [],
+          "responses": {}
+        }
+      ],
+      "headers": [],
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "variables": []
+    },
+    {
+      "v": 1,
+      "name": "Users",
+      "folders": [],
+      "requests": [
+        {
+          "v": "17",
+          "name": "List Users",
+          "endpoint": "<<baseUrl>>/api/users",
+          "method": "GET",
+          "params": [
+            {
+              "key": "page",
+              "value": "<<usersPage>>",
+              "active": true,
+              "description": ""
+            }
+          ],
+          "headers": [
+            {
+              "key": "x-api-key",
+              "value": "<<apiKey>>",
+              "active": true,
+              "description": ""
+            }
+          ],
+          "preRequestScript": "",
+          "testScript": "pw.test('Status is 200', () => {\n  pw.expect(pw.response.status).toBe(200);\n});\npw.test('Data is an object', () => {\n  pw.expect(pw.response.body.data).toBeType('object');\n});\npw.test('Page is a number', () => {\n  pw.expect(pw.response.body.page).toBeType('number');\n});\npw.test('Total is a number', () => {\n  pw.expect(pw.response.body.total).toBeType('number');\n});\nconst firstUser = pw.response.body.data[0];\nif (firstUser) {\n  pw.env.set('userId', String(firstUser.id));\n  console.log('Captured userId: ' + firstUser.id);\n}",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "17",
+          "name": "Single User",
+          "endpoint": "<<baseUrl>>/api/users/<<userId>>",
+          "method": "GET",
+          "params": [],
+          "headers": [
+            {
+              "key": "x-api-key",
+              "value": "<<apiKey>>",
+              "active": true,
+              "description": ""
+            }
+          ],
+          "preRequestScript": "console.log('Fetching user: <<userId>>');",
+          "testScript": "pw.test('Status is 200', () => {\n  pw.expect(pw.response.status).toBe(200);\n});\npw.test('User id is a number', () => {\n  pw.expect(pw.response.body.data.id).toBeType('number');\n});\npw.test('Email is a string', () => {\n  pw.expect(pw.response.body.data.email).toBeType('string');\n});\npw.test('First name is a string', () => {\n  pw.expect(pw.response.body.data.first_name).toBeType('string');\n});\npw.test('Last name is a string', () => {\n  pw.expect(pw.response.body.data.last_name).toBeType('string');\n});",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "17",
+          "name": "Update User",
+          "endpoint": "<<baseUrl>>/api/users/<<userId>>",
+          "method": "PUT",
+          "params": [],
+          "headers": [
+            {
+              "key": "x-api-key",
+              "value": "<<apiKey>>",
+              "active": true,
+              "description": ""
+            }
+          ],
+          "preRequestScript": "console.log('Updating user: <<userId>>');",
+          "testScript": "pw.test('Status is 200', () => {\n  pw.expect(pw.response.status).toBe(200);\n});\npw.test('Name was updated', () => {\n  pw.expect(pw.response.body.name).toBe('morpheus');\n});\npw.test('Job was updated', () => {\n  pw.expect(pw.response.body.job).toBe('zion resident');\n});\npw.test('updatedAt is a string', () => {\n  pw.expect(pw.response.body.updatedAt).toBeType('string');\n});",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "body": "{\n  \"name\": \"morpheus\",\n  \"job\": \"zion resident\"\n}",
+            "contentType": "application/json"
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "17",
+          "name": "Delete User",
+          "endpoint": "<<baseUrl>>/api/users/<<userId>>",
+          "method": "DELETE",
+          "params": [],
+          "headers": [
+            {
+              "key": "x-api-key",
+              "value": "<<apiKey>>",
+              "active": true,
+              "description": ""
+            }
+          ],
+          "preRequestScript": "console.log('Deleting user: <<userId>>');",
+          "testScript": "pw.test('Status is 204', () => {\n  pw.expect(pw.response.status).toBe(204);\n});",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "requestVariables": [],
+          "responses": {}
+        }
+      ],
+      "headers": [],
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "variables": []
+    },
+    {
+      "v": 1,
+      "name": "Resources",
+      "folders": [],
+      "requests": [
+        {
+          "v": "17",
+          "name": "List Resources",
+          "endpoint": "<<baseUrl>>/api/unknown",
+          "method": "GET",
+          "params": [],
+          "headers": [
+            {
+              "key": "x-api-key",
+              "value": "<<apiKey>>",
+              "active": true,
+              "description": ""
+            }
+          ],
+          "preRequestScript": "",
+          "testScript": "pw.test('Status is 200', () => {\n  pw.expect(pw.response.status).toBe(200);\n});\npw.test('Data is an object', () => {\n  pw.expect(pw.response.body.data).toBeType('object');\n});\npw.test('Page is a number', () => {\n  pw.expect(pw.response.body.page).toBeType('number');\n});\nconst resources = pw.response.body.data;\nif (resources && resources.length > 0) {\n  pw.env.set('resourceId', String(resources[0].id));\n  console.log('Captured resourceId: ' + resources[0].id);\n}",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "requestVariables": [],
+          "responses": {}
+        },
+        {
+          "v": "17",
+          "name": "List Generic Resources",
+          "endpoint": "<<baseUrl>>/api/products",
+          "method": "GET",
+          "params": [
+            {
+              "key": "page",
+              "value": "<<productsPage>>",
+              "active": true,
+              "description": ""
+            }
+          ],
+          "headers": [
+            {
+              "key": "x-api-key",
+              "value": "<<apiKey>>",
+              "active": true,
+              "description": ""
+            }
+          ],
+          "preRequestScript": "",
+          "testScript": "pw.test('Status is 200', () => {\n  pw.expect(pw.response.status).toBe(200);\n});\npw.test('Page is a number', () => {\n  pw.expect(pw.response.body.page).toBeType('number');\n});\npw.test('Total is a number', () => {\n  pw.expect(pw.response.body.total).toBeType('number');\n});",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "requestVariables": [],
+          "responses": {}
+        }
+      ],
+      "headers": [],
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "variables": []
+    }
+  ],
+  "requests": [],
+  "headers": [],
+  "auth": {
+    "authType": "none",
+    "authActive": true
+  },
+  "variables": [],
+  "description": ""
+}
